@@ -1,5 +1,5 @@
 [Project]
-FileName=Zodiac Love Meter.dev
+FileName=Zodiac Love Meter yang FIX.dev
 Name=?? Zodiac Love Meter ??
 Type=1
 Ver=2
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0000000000000000001000000
-UnitCount=7
+UnitCount=5
 
 [VersionInfo]
 Major=1
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit2]
-FileName=loveheader.h
+FileName=mainmenu.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -61,16 +61,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=zodiacassign.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit1]
 FileName=main.c
 CompileCpp=0
 Folder=
@@ -80,8 +70,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit1]
+FileName=loveheader.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit4]
-FileName=mainmenu.c
+FileName=maingame.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -111,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=lovecalculator.c
+FileName=exitmsg.c
 CompileCpp=0
 Folder=
 Compile=1

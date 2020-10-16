@@ -1,10 +1,9 @@
 #include "loveheader.h"
+int opt;
 
 void mainMenu()
 {
-    int opt;
-    printf("\033[0;35m");
-    printf("\t\t==================================================================================\n");
+	printf("\t\t==================================================================================\n");
     printf("\t\t[]  8888                                                     _ _                []\n");   
     printf("\t\t[]  8888                                                    | (_)               []\n");
     printf("\t\t[]  8888                                        _______   __| |_  __ _  ___     []\n");
@@ -16,7 +15,6 @@ void mainMenu()
     printf("\t\t[]  8888                 \"8\"      `'\"Yaaa8\"                                     []\n");
     printf("\t\t[]  88888888888888                                                              []\n");
     printf("\t\t==================================================================================\n");
-    printf("\033[0m");
     Sleep(2000);
 
     MENU:
@@ -30,9 +28,10 @@ void mainMenu()
     printf("\t\t    .|                                                                             |.\n");
     printf("\t\t    .| **************************************************************************  |.\n");
     printf("\t\t    .| MAIN MENU:                                                                  |.\n");
+    printf("\t\t    .|                                                                             |.\n");
     printf("\t\t    .| 1. Input nama dan tanggal lahir                                             |.\n");
     printf("\t\t    .|                                                                             |.\n");
-    printf("\t\t    .| 2. Lihat Zodiakmu                                                         |.\n");
+    printf("\t\t    .| 2. Lihat Zodiakmu                                                           |.\n");
     printf("\t\t    .|                                                                             |.\n");
     printf("\t\t    .| 3. Tingkat kecocokan                                                        |.\n");
     printf("\t\t    .|                                                                             |.\n");
@@ -46,21 +45,21 @@ void mainMenu()
         case 1:
             system("cls");
             nameInput();
-            printf("\t\tTekan apa saja untuk kembali ke main menu!");
+            printf("\n\t\tTekan apa saja untuk kembali ke main menu!");
             getch();
             goto MENU;
             break;
         case 2:
             system("cls");
             showZodiac();
-            printf("\t\tTekan apa saja untuk kembali ke main menu!");
+            printf("\n\t\tTekan apa saja untuk kembali ke main menu!");
             getch();
             goto MENU;
             break;
         case 3:
             system("cls");
             loveCalculator();
-            printf("Tekan apa saja untuk kembali ke main menu!");
+            printf("\n\t\tTekan apa saja untuk kembali ke main menu!");
             getch();
             goto MENU;
             break;
@@ -69,9 +68,10 @@ void mainMenu()
             exitMessage();
             break;
         default:
-            printf("\t\t!! ERROR !! INPUT TIDAK SESUAI MENU\n");
-            printf("\t\t***********************************\n");
-            printf("\t\tSilahkan kembali ke main menu, tekan apa saja");
+        	system("cls");
+            printf("\n\n\t\t\t\t      !! ERROR !! INPUT TIDAK SESUAI MENU    \n");
+            printf("\t\t\t\t*********************************************\n");
+            printf("\t\t\t\tSilahkan kembali ke main menu, tekan apa saja");
             getch();
             goto MENU;
             break;

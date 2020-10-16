@@ -1,6 +1,6 @@
 #include "loveheader.h"
 
-int  x,y,d;
+int  x,y,d, enable;
 int  z[2];
 int  tanggalLahir[2][2];
 int  zodiacUser[2] = {0, 1};
@@ -9,57 +9,74 @@ char namaOrang[2][100];
 char zodiak[12][100]={"Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"};
 	
 void nameInput(){
-
+	enable=1;
 	for (x=0; x<2; x++)
 	{
 		system("cls");
-		printf("<3 Silahkan masukan nama kamu dan pasanganmu <3\n");
-		printf("1. Nama yang di-input hanya nama pertama saja\n");
-		printf("   Misalnya Budiman Santoso, input Budi di kolom input\n");
-		printf("2. Inputlah tanggal lahir dengan format dd/mm\n");
-		printf("   misalnya 12 Oktober, maka input 12/10\n\n");
+		printf("\t\t*******************************************************\n");
+		printf("\t\t*******************************************************\n");
+		printf("\t\t<3 Silahkan masukan nama kamu dan pasanganmu <3\n\n");
+		printf("\t\t1. Nama yang di-input hanya nama pertama saja\n");
+		printf("\t\t   Misalnya Budiman Santoso, input Budi di kolom input\n");
+		printf("\t\t2. Inputlah tanggal lahir dengan format dd/mm\n");
+		printf("\t\t   misalnya 12 Oktober, maka input 12/10\n\n");
+		printf("\t\t*******************************************************\n");
+		printf("\t\t*******************************************************\n\n");
 	
 		if (x==0)
 		{
-			printf("\t\tMasukkan nama kamu  >> ");
+			printf("\t\tMasukkan nama kamu       >> ");
 			scanf("%s", &namaOrang[x]);
 		
 			printf("\t\tMasukkan tanggal lahirmu >> ");
-			scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);	
+			scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);
+			
+			while(tanggalLahir[x][0]>31 || tanggalLahir[x][0]<1 && tanggalLahir[x][1]>12 || tanggalLahir[x][1]<1)
+			{
+				printf("\t\tTanggal tidak valid silahkan input tanggal lahir kembali >> ");
+				scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);
+			}
 		}
 		
 		else
 		{
-			printf("\t\tMasukkan nama pasanganmu  >> ");
+			printf("\t\tMasukkan nama pasanganmu          >> ");
 			scanf("%s", &namaOrang[x]);
 		
 			printf("\t\tMasukkan tanggal lahir pasanganmu >> ");
-			scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);	
+			scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);
+			
+			while(tanggalLahir[x][0]>31 || tanggalLahir[x][0]<1 && tanggalLahir[x][1]>12 || tanggalLahir[x][1]<1)
+			{
+				printf("\t\tTanggal tidak valid silahkan input tanggal lahir kembali >> ");
+				scanf("%d/%d", &tanggalLahir[x][0], &tanggalLahir[x][1]);
+			}
 		}
+	
 	}
 	                  
 	zodiacAssign(x);
-	printf("\t\t\n");
+
+	system("cls");
 	
-	printf("\t\t\n\n");
+	printf("\t\t\n\n\n");
+	printf("\t\t                           %s -- %d/%d -- %s\n\n", namaOrang[0], tanggalLahir[0][0], tanggalLahir[0][1], zodiak[zodiacAssign(zodiacUser[0])]);
 	
-	
-	printf("\t\t\n\n\n\n");
-	printf("\t\t======================================================================================\n");
-	printf("\t\t=====================           $$$$         $$$$               ======================\n");
-	printf("\t\t                              $$$$$$$$     $$$$$$$$\n");
-	printf("\t\t                            $$$$$$$$$$$$ $$$$$$$$$$$$\n");
-	printf("\t\t                            $$$$$$$$$$$$$$$$$$$$$$$$$\n");
-	printf("\t\t                           $$$$$$$$$$$$$$$$$$$$$$$$$$$\n"); 
-	printf("\t\t        %s               $$$$$$$$$$$$$$$$$$$$$$$$$$$                   %s\n", namaOrang[0], namaOrang[1]);
-	printf("\t\t        %d/%d                $$$$$$$$$$$$$$$$$$$$$$$$$                      %d/%d\n", tanggalLahir[0][0], tanggalLahir[0][1], tanggalLahir[1][0], tanggalLahir[1][1]);
-	printf("\t\t        %s                 $$$$$$$$$$$$$$$$$$$$$$$                     %s\n", zodiak[zodiacAssign(zodiacUser[0])], zodiak[zodiacAssign(zodiacUser[1])]);
-	printf("\t\t                               $$$$$$$$$$$$$$$$$$$\n");
-	printf("\t\t                                  $$$$$$$$$$$$$\n");
-	printf("\t\t                                     $$$$$$$\n");
-	printf("\t\t                                       $$$\n");
-	printf("\t\t====================                    $                      ========================\n");
-	printf("\t\t======================================================================================\n"); 
+	printf("\t\t=====================\033[0;35m           $$$$         $$$$              \033[0m=======================	\n");
+	printf("\t\t\033[0;35m                              $$$$$$$$     $$$$$$$$                                   	\n");
+	printf("\t\t                            $$$$$$$$$$$$ $$$$$$$$$$$$                                 	\n");
+	printf("\t\t                            $$$$$$$$$$$$$$$$$$$$$$$$$                                 	\n");
+	printf("\t\t                           $$$$$$$$$$$$$$$$$$$$$$$$$$$                                	\n"); 
+	printf("\t\t                           $$$$$$$$$$$$$$$$$$$$$$$$$$$                                  \n");
+	printf("\t\t                            $$$$$$$$$$$$$$$$$$$$$$$$$                                   \n");
+	printf("\t\t                             $$$$$$$$$$$$$$$$$$$$$$$                                    \n");
+	printf("\t\t                               $$$$$$$$$$$$$$$$$$$										\n");
+	printf("\t\t                                  $$$$$$$$$$$$$											\n");
+	printf("\t\t                                     $$$$$$$											\n");
+	printf("\t\t                                       $$$					  \033[0m							\n");
+	printf("\t\t====================\033[0;35m                    $                     \033[0m========================	\n\n");
+
+	printf("\t\t                           %s -- %d/%d -- %s\n", namaOrang[1], tanggalLahir[1][0], tanggalLahir[1][1], zodiak[zodiacAssign(zodiacUser[1])]);
 }
 
 int zodiacAssign(int x){				
@@ -138,142 +155,24 @@ int zodiacAssign(int x){
 
 void showZodiac()
 {
-	for(x=0; x<2; x++){
-		for(y=0; y<12; y++){
-			if(x == 0){
-				if(zodiacAssign(zodiacUser[x] == y))
-				{
-					if(y == 0)
-					{ 
-						//capricorn
-						printBinatang(y);
-					}
-					else if(y == 1)
-					{ 
-						//aquarius
-						printBinatang(y);
-					}
-					else if(y == 2)
-					{
-						//pisces
-						printBinatang(y);
-					}
-					else if(y == 3)
-					{
-						//aries
-						printBinatang(y);
-					}
-					else if(y == 4)
-					{
-						//taurus
-						printBinatang(y);
-					}
-					else if(y == 5)
-					{
-						//gemini
-						printBinatang(y);
-					}
-					else if(y == 6)
-					{
-						//cancer
-						printBinatang(y);
-					}
-					else if(y == 7)
-					{
-						//leo
-						printBinatang(y);
-					}
-					else if(y == 8)
-					{
-						//virgo
-						printBinatang(y);
-					}
-					else if(y == 9)
-					{
-						//libra
-						printBinatang(y);
-					}
-					else if(y == 10)
-					{
-						//scorpio
-						printBinatang(y);
-					}
-					else if(y == 11)
-					{
-						//sagittarius
-						printBinatang(y);
-					}
-				}
-			printf("Zodiak kamu adalah %s", zodiak[zodiacAssign(zodiacUser[x])]);		
-			}
-			
-				
-			else{
-				if(zodiacAssign(zodiacUser[x] == y)){
-					if(y == 0)
-					{ 
-						//capricorn
-						printBinatang(y);
-					}
-					else if(y == 1)
-					{ 
-						//aquarius
-						printBinatang(y);
-					}
-					else if(y == 2)
-					{
-						//pisces
-						printBinatang(y);
-					}
-					else if(y == 3)
-					{
-						//aries
-						printBinatang(y);
-					}
-					else if(y == 4)
-					{
-						//taurus
-						printBinatang(y);
-					}
-					else if(y == 5)
-					{
-						//gemini
-						printBinatang(y);
-					}
-					else if(y == 6)
-					{
-						//cancer
-						printBinatang(y);
-					}
-					else if(y == 7)
-					{
-						//leo
-						printBinatang(y);
-					}
-					else if(y == 8)
-					{
-						//virgo
-						printBinatang(y);
-					}
-					else if(y == 9)
-					{
-						//libra
-						printBinatang(y);
-					}
-					else if(y == 10)
-					{
-						//scorpio
-						printBinatang(y);
-					}
-					else if(y == 11)
-					{
-						//sagittarius
-						printBinatang(y);
-					}	
-				}
-				printf("Zodiak pasanganmu adalah %s", zodiak[zodiacAssign(zodiacUser[x])]);
-			}
-		}	
+	if(enable != 1){
+		printf("\t\tKamu belum memasukkan nama dan tanggal lahir :(\n");
+		printf("\t\tKamu akan kembali ke main menu dalam 3 detik  . . .\n");
+		Sleep(3000);
+		system("cls");
+		mainMenu();		
+	}
+	
+	for(x=0;x<2;x++){
+		if(x == 0){
+			printf("\t\t\t Zodiakmu adalah %s \n", zodiak[zodiacAssign(zodiacUser[x])]);
+			printBinatang(zodiacAssign(zodiacUser[x]));
+		}
+		else{
+			printf("\n\t\t=========================================\n\n\n");
+			printf("\t\t  Zodiak pasanganmu adalah %s \n", zodiak[zodiacAssign(zodiacUser[x])]);
+			printBinatang(zodiacAssign(zodiacUser[x]));
+		}
 	}
 }
 	
@@ -281,13 +180,146 @@ void printBinatang(int y)
 {
 	if(y==0)
 	{
-		printf("gambar capricorn");
+		//capricorn
+		printf("\033[0;31m");
+		printf("\t\t\t\t        _		\n");
+		printf("\t\t\t\t\\      /_)     \n");
+		printf("\t\t\t\t \\    /`.		\n");
+		printf("\t\t\t\t  \\  /   ;		\n");
+		printf("\t\t\t\t   \\/ __.'		\n");
+		printf("\033[0m");
 	}
-	else
+	
+	else if(y==1)
 	{
-		printf("pokoknya ada bro");
+		//aquarius
+		printf("\033[0;36m");
+		printf("\t\t\t  .-^-._.-^-._.-  \n\n");
+		printf("\t\t\t    .-^-._.-^-._.- \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==2)
+	{
+		//pisces
+		printf("\033[1;36m");
+		printf("\t\t\t\t `-.   .-'  \n");
+		printf("\t\t\t\t   :  :	 \n");
+		printf("\t\t\t\t --:--:--   \n");
+		printf("\t\t\t\t   :  :     \n");
+		printf("\t\t\t\t.-'    `-.  \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==3)
+	{
+		//aries
+		printf("\033[1;33m");
+		printf("\t\t\t\t .-.   .-.  \n");
+		printf("\t\t\t\t(_  \\ /  _)\n");
+	  	printf("\t\t\t\t     |      \n");
+		printf("\t\t\t\t     |      \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==4)
+	{
+		//taurus
+		printf("\033[1;31m");
+		printf("\t\t\t\t .     .  \n");
+    	printf("\t\t\t\t '.___.'  \n");   
+    	printf("\t\t\t\t .'   `.  \n");
+   		printf("\t\t\t\t:       : \n");
+   		printf("\t\t\t\t:       : \n");
+       	printf("\t\t\t\t `.___.'  \n");
+       	printf("\033[0m");
+	}
+		
+	else if(y==5)
+	{
+		//gemini
+		printf("\033[1;33m");
+		printf("\t\t\t\t._____.  \n");
+      	printf("\t\t\t\t  | |    \n");     
+      	printf("\t\t\t\t  | |    \n");
+     	printf("\t\t\t\t _|_|_   \n");
+    	printf("\t\t\t\t'     '  \n");
+    	printf("\033[0m");
+	}
+	
+	else if(y==6)
+	{
+		//cancer
+		printf("\033[0;31m");
+		printf("\t\t\t\t   .--.   \n");
+     	printf("\t\t\t\t  /   _`. \n");   
+    	printf("\t\t\t\t (_) ( )  \n");
+   		printf("\t\t\t\t'.    /   \n");
+    	printf("\t\t\t\t  `--'    \n");
+    	printf("\033[0m");
+	}
+	
+	else if(y==7)
+	{
+		//leo
+		printf("\033[1;32m");
+		printf("\t\t\t\t  .--.   \n");
+    	printf("\t\t\t\t (    )  \n");   
+    	printf("\t\t\t\t(_)  /   \n");
+     	printf("\t\t\t\t    (_,  \n");
+     	printf("\033[0m");
+	}
+	
+	else if(y==8)
+	{
+		
+		//virgo
+		printf("\033[1;36m");
+		printf("\t\t\t\t _           \n");
+		printf("\t\t\t\t' `:--.--.   \n");
+		printf("\t\t\t\t   |  |  |_  \n");  
+		printf("\t\t\t\t   |  |  | ) \n");
+		printf("\t\t\t\t   |  |  |/  \n");
+		printf("\t\t\t\t         (J   \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==9)
+	{
+		//libra
+		printf("\033[0;32m");
+		printf("\t\t\t\t     __      \n");
+		printf("\t\t\t\t___.'  '.___ \n");  
+		printf("\t\t\t\t____________ \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==10)
+	{
+		//scorpio
+		printf("\033[0;33m");
+		printf("\t\t\t\t _			 \n");
+		printf("\t\t\t\t' `:--.--.	 \n");
+		printf("\t\t\t\t   |  |  |  	 \n");   
+		printf("\t\t\t\t   |  |  |	 \n");
+		printf("\t\t\t\t   |  |  |  	 \n");
+		printf("\t\t\t\t          `->  \n");
+		printf("\033[0m");
+	}
+	
+	else if(y==11)
+	{
+		//sagittarius
+		printf("\033[1;35m");
+		printf("\t\t\t\t       ...	\n");
+		printf("\t\t\t\t      .':   \n"); 
+		printf("\t\t\t\t    .'		\n");
+		printf("\t\t\t\t`..'		\n");
+		printf("\t\t\t\t.'`.		\n");
+		printf("\033[0m");
 	}
 }
+
 
 void loveCalculator()
 {
