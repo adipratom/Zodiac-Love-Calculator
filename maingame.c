@@ -65,7 +65,6 @@ void nameInput(){
 	system("cls");
 	printf("\t\t\n\n\n");
 	printf("\t\t                            %s -- %d/%d -- %s\n\n", namaOrang[0], tanggalLahir[0][0], tanggalLahir[0][1], zodiak[zodiacAssign(zodiacUser[0])]);
-	
 	printf("\t\t=====================\033[0;35m           $$$$         $$$$              \033[0m=======================	\n");
 	printf("\t\t\033[0;35m                              $$$$$$$$     $$$$$$$$                                   	\n");
 	printf("\t\t                            $$$$$$$$$$$$ $$$$$$$$$$$$\n");
@@ -389,7 +388,7 @@ void loveCalculator()
 	}
 	
 	srand(time(0));
-	printf("\n\t\t\t--LOADING -- LOADING -- LOADING -- LOADING --");
+	printf("\n\n\n\t\t\t--LOADING -- LOADING -- LOADING -- LOADING --");
 	printf("\n\t\t\t          Menghitung kecocokan ");
 	for(d=0;d<3;d++)
 	{
@@ -398,6 +397,7 @@ void loveCalculator()
  	}
 	printf("\n\t\t\t--LOADING -- LOADING -- LOADING -- LOADING --");
 	printf("\n"); 
+ 	system("cls");
  	
     for(x=0; x<1; x++)
     {

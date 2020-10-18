@@ -7,7 +7,6 @@
 	#define LOVE_HEADER_H
 	
 	#include <stdio.h>
-	#include <string.h>
 	#include <conio.h>
 	#include <stdlib.h>
 	#include <windows.h>
