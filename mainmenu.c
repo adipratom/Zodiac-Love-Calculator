@@ -1,8 +1,15 @@
 #include "loveheader.h"
+
+
+//Fatma Putri R  	 - 1906381735
+//Satriyo Adipratomo - 1906300845
+
 int opt;
 
+//fungsi main menu
 void mainMenu()
 {
+
 	printf("\t\t==================================================================================\n");
     printf("\t\t[]  8888                                                     _ _                []\n");   
     printf("\t\t[]  8888                                                    | (_)               []\n");
@@ -52,14 +59,14 @@ void mainMenu()
         case 2:
             system("cls");
             showZodiac();
-            printf("\n\t\tTekan apa saja untuk kembali ke main menu!");
+            printf("\n\n\t\tTekan apa saja untuk kembali ke main menu!");
             getch();
             goto MENU;
             break;
         case 3:
             system("cls");
             loveCalculator();
-            printf("\n\t\tTekan apa saja untuk kembali ke main menu!");
+            printf("\n\t\t\tTekan apa saja untuk kembali ke main menu!");
             getch();
             goto MENU;
             break;
@@ -69,9 +76,10 @@ void mainMenu()
             break;
         default:
         	system("cls");
-            printf("\n\n\t\t\t\t      !! ERROR !! INPUT TIDAK SESUAI MENU    \n");
-            printf("\t\t\t\t*********************************************\n");
-            printf("\t\t\t\tSilahkan kembali ke main menu, tekan apa saja");
+        	printf("\n");
+            printf("\t\t\t\t!! ERROR - ERROR - ERROR - ERROR - ERROR - ERROR - ERROR !! \n");
+            printf("\t\t\t\t      Silahkan kembali ke main menu, tekan apa saja         \n");
+            printf("\t\t\t\t!! ERROR - ERROR - ERROR - ERROR - ERROR - ERROR - ERROR !! \n");
             getch();
             goto MENU;
             break;

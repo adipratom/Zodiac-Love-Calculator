@@ -1,3 +1,8 @@
+//header custom agar fungsi-fungsi dapat di parse antar file
+
+//Fatma Putri R  	 - 1906381735
+//Satriyo Adipratomo - 1906300845
+
 #ifndef LOVE_HEADER_H	
 	#define LOVE_HEADER_H
 	
@@ -16,5 +21,5 @@
 	void exitMessage();
 	void showZodiac();
 	void printBinatang(int y);
-
+	
 #endif
